@@ -2,10 +2,10 @@ import cx from 'classnames';
 import React from 'react';
 import { CLICK_TYPE } from '../constant';
 import { Text } from '../Text';
-import { ButtonProps, defaultProps } from './props';
+import { AnchorProps, defaultProps } from './props';
 
-import { StyledButton } from './styled';
-export const Button = React.forwardRef((props: ButtonProps, ref: any) => {
+import { StyledAnchor } from './styled';
+export const Anchor = React.forwardRef((props: AnchorProps, ref: any) => {
   const {
     text,
     textComponent,
@@ -21,33 +21,34 @@ export const Button = React.forwardRef((props: ButtonProps, ref: any) => {
 
   const styledClassNamesValues = (Object.values(styledClassNames) as string[]).flat();
 
-  const { pageNavigate, absoluteUrlNavigate, popup, clickType } = events;
+  const { pageNavigate, absoluteUrlNavigate, href, clickType } = events;
   const handleNavigate = () => {
+    if (isUsedHref) return;
     if (pageNavigate || absoluteUrlNavigate) {
       const desUrl = pageNavigate || absoluteUrlNavigate;
       window.location.href = desUrl;
     }
   };
-  const handleOpenPopup = () => {
-    document.getElementById(popup).style.display = 'block';
-  };
+
   const mapClickEvent = {
     [CLICK_TYPE.NAVIGATE]: handleNavigate,
-    [CLICK_TYPE.POP_UP]: handleOpenPopup,
   };
 
+  const isUsedHref = clickType === CLICK_TYPE.HREF;
+
   return (
-    <StyledButton
+    <StyledAnchor
       ref={ref}
       className={cx([
         className,
-        'button rounded w-full px-4 py-2 mt-4',
+        'anchor rounded w-full px-4 py-2 mt-4',
         {
-          'shadow-lg': props.buttonStyle === 'full',
+          'shadow-lg': props.anchorStyle === 'full',
         },
         styledClassNamesValues,
       ])}
-      onClick={mapClickEvent[clickType]}
+      href={isUsedHref ? '#' + href : undefined}
+      onClick={isUsedHref && mapClickEvent[clickType]}
       {...otherProps}
     >
       <Text
@@ -58,8 +59,8 @@ export const Button = React.forwardRef((props: ButtonProps, ref: any) => {
         fontWeight={fontWeight}
         textAlign={textAlign}
       />
-    </StyledButton>
+    </StyledAnchor>
   );
 });
 
-Button.defaultProps = defaultProps;
+Anchor.defaultProps = defaultProps;

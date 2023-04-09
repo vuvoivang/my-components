@@ -1,8 +1,8 @@
 import { Text } from '../Text';
 
-type EventKeys = 'pageNavigate' | 'absoluteUrlNavigate' | 'popup' | 'clickType';
+type EventKeys = 'pageNavigate' | 'absoluteUrlNavigate' | 'href' | 'clickType';
 
-export type ButtonProps = Partial<{
+export type AnchorProps = Partial<{
   fontSize: string;
   textAlign: string;
   fontWeight: string;
@@ -10,7 +10,7 @@ export type ButtonProps = Partial<{
   height: string;
   background: Record<'r' | 'g' | 'b' | 'a', string>;
   color: Record<'r' | 'g' | 'b' | 'a', string>;
-  buttonStyle: string;
+  anchorStyle: string;
   padding: any[];
   margin: any[];
   text: string;
@@ -22,13 +22,13 @@ export type ButtonProps = Partial<{
   nestedPropKey?: string;
 }>;
 
-export const defaultProps: ButtonProps = {
+export const defaultProps: AnchorProps = {
   fontSize: '14',
   textAlign: 'center',
   fontWeight: '500',
   background: { r: '255', g: '255', b: '255', a: '0.5' },
   color: { r: '92', g: '90', b: '90', a: '1' },
-  buttonStyle: 'full',
+  anchorStyle: 'full',
   text: 'Button',
   padding: ['10', '10', '10', '10'],
   margin: ['5', '0', '5', '0'],
@@ -42,7 +42,7 @@ export const defaultProps: ButtonProps = {
   events: {
     pageNavigate: '',
     absoluteUrlNavigate: '',
-    popup: '',
-    clickType: '',
+    href: '',
+    clickType: 'href',
   },
 };

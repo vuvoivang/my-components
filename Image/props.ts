@@ -1,4 +1,4 @@
-export const PLACEHOLDER_IMAGE_URL = "https://phutungnhapkhauchinhhang.com/wp-content/uploads/2020/06/default-thumbnail.jpg";
+import { PLACEHOLDER_IMAGE_URL } from '../constant';
 
 export type ImageProps = Partial<{
   alt: string;
@@ -10,10 +10,10 @@ export type ImageProps = Partial<{
   objectFit: string;
 }>;
 export const defaultProps: ImageProps = {
-  alt: "alternative description",
+  alt: 'alternative description',
   src: PLACEHOLDER_IMAGE_URL,
-  width: "400px",
-  height: "auto",
+  width: '400px',
+  height: 'auto',
   radius: 10,
-  objectFit: "cover",
+  objectFit: 'cover',
 };

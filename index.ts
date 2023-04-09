@@ -1,6 +1,11 @@
-export { Container } from "./Container";
-export { Button } from "./Button";
-export { Image } from "./Image";
-export { Text } from "./Text";
-export { Input } from "./Input";
-export { Video } from "./Video";
+export { Container } from './Container';
+export { Button } from './Button';
+export { Image } from './Image';
+export { Text } from './Text';
+export { Input } from './Input';
+export { Video } from './Video';
+export { Popup } from './Popup';
+export { Anchor } from './Anchor';
+export * from './Custom1';
+export * from './Custom2';
+export * from './Custom3';
