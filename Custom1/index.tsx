@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import {Button} from '../Button';
-import {Container} from '../Container';
+import { Button } from "../Button";
+import { Container } from "../Container";
 
 export const OnlyButtons = ({ children, ...props }) => {
   return (
@@ -20,12 +20,8 @@ export const Custom1 = (props) => {
       </h2>
       <OnlyButtons>
         <Button />
-        <Button
-          buttonStyle="outline"
-          color={{ r: 255, g: 255, b: 255, a: 1 }}
-        />
+        <Button buttonStyle="outline" color={{ r: '255', g: '255', b: '255', a: '1' }} />
       </OnlyButtons>
     </Container>
   );
 };
-

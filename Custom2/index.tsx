@@ -1,14 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import {Container} from '../Container';
-import {Video} from '../Video';
+import { Container } from "../Container";
+import { Video } from "../Video";
 
 export const Custom2VideoDrop = ({ children }) => {
-  return (
-    <div className="flex-1 ml-5 h-full">
-      {children}
-    </div>
-  );
+  return <div className="flex-1 ml-5 h-full">{children}</div>;
 };
 
 export const Custom2 = (props) => {
