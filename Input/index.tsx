@@ -6,8 +6,8 @@ import { StyledInput } from './styled';
 import { InputProps } from './props';
 import { defaultProps } from './props';
 
-export const Input = (props: any) => {
-  const { styledClassNames, type, placeholder, inputOptions, className, ...otherProps } = props;
+export const Input = (props: InputProps) => {
+  const { styledClassNames = {}, type, placeholder, inputOptions = {}, className, ...otherProps } = props;
   const styledClassNamesValues = (Object.values(styledClassNames) as string[]).flat();
   const { required, readonly } = inputOptions;
   return (

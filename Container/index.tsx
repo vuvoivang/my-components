@@ -14,18 +14,17 @@ export const Container = (props: Partial<ContainerProps>) => {
     alignItems,
     justifyContent,
     fillSpace,
-    background,
-    color,
-    padding,
-    margin,
+    background = {},
+    color = {},
+    padding = [],
+    margin = [],
     shadow,
     radius,
     children,
-    styledClassNames,
+    styledClassNames = {},
     width,
     height,
     className,
-    maxWidth,
   } = props;
   const styledClassNamesValues = (Object.values(styledClassNames) as string[]).flat();
   return (
@@ -45,7 +44,6 @@ export const Container = (props: Partial<ContainerProps>) => {
         boxShadow: shadow === 0 ? 'none' : `0px 3px 100px ${shadow}px rgba(0, 0, 0, 0.13)`,
         borderRadius: `${radius}px`,
         flex: fillSpace === 'yes' ? 1 : 'unset',
-        maxWidth,
       }}
     >
       {children}

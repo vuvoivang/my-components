@@ -2,20 +2,20 @@ import cx from 'classnames';
 import React from 'react';
 import { CLICK_TYPE } from '../constant';
 import { Text } from '../Text';
-import { AnchorProps, defaultProps } from './props';
+import { AnchorProps, EventKeys, defaultProps } from './props';
 
 import { StyledAnchor } from './styled';
-export const Anchor = React.forwardRef((props: AnchorProps, ref: any) => {
+export const Anchor = (props: AnchorProps) => {
   const {
     text,
     textComponent,
     color,
-    styledClassNames,
+    styledClassNames = {},
     fontSize,
     fontWeight,
     textAlign,
     className,
-    events,
+    events = {} as Record<EventKeys, string>,
     ...otherProps
   } = props;
 
@@ -38,7 +38,6 @@ export const Anchor = React.forwardRef((props: AnchorProps, ref: any) => {
 
   return (
     <StyledAnchor
-      ref={ref}
       className={cx([
         className,
         'anchor rounded w-full px-4 py-2 mt-4',
@@ -61,6 +60,6 @@ export const Anchor = React.forwardRef((props: AnchorProps, ref: any) => {
       />
     </StyledAnchor>
   );
-});
+};
 
 Anchor.defaultProps = defaultProps;

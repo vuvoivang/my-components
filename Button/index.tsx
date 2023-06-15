@@ -2,20 +2,20 @@ import cx from 'classnames';
 import React from 'react';
 import { CLICK_TYPE } from '../constant';
 import { Text } from '../Text';
-import { ButtonProps, defaultProps } from './props';
+import { ButtonProps, EventKeys, defaultProps } from './props';
 
 import { StyledButton } from './styled';
-export const Button = React.forwardRef((props: ButtonProps, ref: any) => {
+export const Button = (props: ButtonProps) => {
   const {
     text,
     textComponent,
     color,
-    styledClassNames,
+    styledClassNames = {},
     fontSize,
     fontWeight,
     textAlign,
     className,
-    events,
+    events = {} as Record<EventKeys, string>,
     ...otherProps
   } = props;
 
@@ -29,7 +29,7 @@ export const Button = React.forwardRef((props: ButtonProps, ref: any) => {
     }
   };
   const handleOpenPopup = () => {
-    document.getElementById(popup).style.display = 'block';
+    if (document.getElementById(popup)) (document.getElementById(popup) as HTMLElement).style.display = 'block';
   };
   const mapClickEvent = {
     [CLICK_TYPE.NAVIGATE]: handleNavigate,
@@ -38,7 +38,6 @@ export const Button = React.forwardRef((props: ButtonProps, ref: any) => {
 
   return (
     <StyledButton
-      ref={ref}
       className={cx([
         className,
         'button rounded w-full px-4 py-2 mt-4',
@@ -60,6 +59,6 @@ export const Button = React.forwardRef((props: ButtonProps, ref: any) => {
       />
     </StyledButton>
   );
-});
+};
 
 Button.defaultProps = defaultProps;
