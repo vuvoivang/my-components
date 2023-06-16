@@ -6,6 +6,3 @@ export { Input } from './Input';
 export { Video } from './Video';
 export { Popup } from './Popup';
 export { Anchor } from './Anchor';
-export * from './Custom1';
-export * from './Custom2';
-export * from './Custom3';
