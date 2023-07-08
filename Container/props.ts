@@ -18,6 +18,7 @@ export type ContainerProps = Partial<{
   radius: number;
   styledClassNames?: Record<string, string>;
   className?: string;
+  id?: string;
 }>;
 export const defaultProps: ContainerProps = {
   flexDirection: 'column',
