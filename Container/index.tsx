@@ -25,6 +25,7 @@ export const Container = (props: Partial<ContainerProps>) => {
     width,
     height,
     className,
+    id,
   } = props;
   const styledClassNamesValues = (Object.values(styledClassNames) as string[]).flat();
   return (
@@ -45,6 +46,7 @@ export const Container = (props: Partial<ContainerProps>) => {
         borderRadius: `${radius}px`,
         flex: fillSpace === 'yes' ? 1 : 'unset',
       }}
+      id={id}
     >
       {children}
     </div>
