@@ -1,6 +1,6 @@
 import { Text } from '../Text';
 
-export type EventKeys = 'pageNavigate' | 'absoluteUrlNavigate' | 'popup' | 'clickType';
+type EventKeys = 'pageNavigate' | 'absoluteUrlNavigate' | 'popup' | 'clickType';
 
 export type ButtonProps = Partial<{
   fontSize: string;

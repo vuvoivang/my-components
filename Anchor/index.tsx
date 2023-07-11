@@ -2,7 +2,7 @@ import cx from 'classnames';
 import React from 'react';
 import { CLICK_TYPE } from '../constant';
 import { Text } from '../Text';
-import { AnchorProps, EventKeys, defaultProps } from './props';
+import { AnchorProps, defaultProps } from './props';
 
 import { StyledAnchor } from './styled';
 export const Anchor = (props: AnchorProps) => {
@@ -10,12 +10,12 @@ export const Anchor = (props: AnchorProps) => {
     text,
     textComponent,
     color,
-    styledClassNames = {},
+    styledClassNames,
     fontSize,
     fontWeight,
     textAlign,
     className,
-    events = {} as Record<EventKeys, string>,
+    events,
     ...otherProps
   } = props;
 

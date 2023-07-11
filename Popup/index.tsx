@@ -8,32 +8,24 @@ import { Container } from '../Container';
 
 export const Popup = (props: PopupProps) => {
   const {
-    id = '',
-    styledClassNames = {},
+    id,
+    styledClassNames,
     className,
     titleComponent,
     contentComponent,
     firstButtonComponent,
     secondButtonComponent,
     containerActionsComponent,
-    events,
+    ...otherProps
   } = props;
-
-  const { showPopup } = events;
   const styledClassNamesValues = (Object.values(styledClassNames) as string[]).flat();
 
   const handleClose = () => {
-    if (document.getElementById(id)) (document.getElementById(id) as HTMLElement).style.display = 'none';
+    if (document.getElementById(id)) document.getElementById(id).style.display = 'none';
   };
 
-
   return (
-    <StyledModal 
-      id={id} 
-      className={cx(['modal', styledClassNamesValues])}
-      style={{
-        display: showPopup ? 'block' : 'none' 
-    }}>
+    <StyledModal id={id} className={cx(['modal', styledClassNamesValues])}>
       <StyledModalContent className='modal-content'>
         <Text {...titleComponent} />
         <Text {...contentComponent} />

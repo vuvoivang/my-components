@@ -2,7 +2,7 @@ import cx from 'classnames';
 import React from 'react';
 import { CLICK_TYPE } from '../constant';
 import { Text } from '../Text';
-import { ButtonProps, EventKeys, defaultProps } from './props';
+import { ButtonProps, defaultProps } from './props';
 
 import { StyledButton } from './styled';
 export const Button = (props: ButtonProps) => {
@@ -10,12 +10,12 @@ export const Button = (props: ButtonProps) => {
     text,
     textComponent,
     color,
-    styledClassNames = {},
+    styledClassNames,
     fontSize,
     fontWeight,
     textAlign,
     className,
-    events = {} as Record<EventKeys, string>,
+    events,
     ...otherProps
   } = props;
 
@@ -29,7 +29,7 @@ export const Button = (props: ButtonProps) => {
     }
   };
   const handleOpenPopup = () => {
-    if (document.getElementById(popup)) (document.getElementById(popup) as HTMLElement).style.display = 'block';
+    document.getElementById(popup).style.display = 'block';
   };
   const mapClickEvent = {
     [CLICK_TYPE.NAVIGATE]: handleNavigate,

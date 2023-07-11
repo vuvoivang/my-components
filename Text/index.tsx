@@ -8,11 +8,12 @@ export const Text = ({
   fontSize,
   textAlign,
   fontWeight,
-  color = {} as Record<"r" | "g" | "b" | "a", string>,
+  fontStyle,
+  color,
   shadow,
   text,
-  margin = [],
-  styledClassNames = {},
+  margin,
+  styledClassNames,
   className,
   tagName,
 }: TextProps) => {
@@ -29,9 +30,10 @@ export const Text = ({
         fontSize: `${fontSize}px`,
         textShadow: `0px 0px 2px rgba(0,0,0,${(shadow || 0) / 100})`,
         fontWeight,
+        fontStyle,
       }}
     >
-      {text}
+      {text?.type === "dynamic-data" ? text?.value : text}
     </Typography>
   );
 };

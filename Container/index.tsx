@@ -14,18 +14,17 @@ export const Container = (props: Partial<ContainerProps>) => {
     alignItems,
     justifyContent,
     fillSpace,
-    background = {},
-    color = {},
-    padding = [],
-    margin = [],
+    background,
+    color,
+    padding,
+    margin,
     shadow,
     radius,
     children,
-    styledClassNames = {},
+    styledClassNames,
     width,
     height,
     className,
-    id,
   } = props;
   const styledClassNamesValues = (Object.values(styledClassNames) as string[]).flat();
   return (
@@ -46,7 +45,6 @@ export const Container = (props: Partial<ContainerProps>) => {
         borderRadius: `${radius}px`,
         flex: fillSpace === 'yes' ? 1 : 'unset',
       }}
-      id={id}
     >
       {children}
     </div>

@@ -16,7 +16,7 @@ export type PopupProps = Partial<{
   className: string;
   events: {
     showPopup: boolean;
-  };
+  }
 }>;
 
 export const defaultProps: PopupProps = {
@@ -58,8 +58,5 @@ export const defaultProps: PopupProps = {
     ...Container.defaultProps,
     flexDirection: 'row',
     justifyContent: 'flex-end',
-  },
-  events: {
-    showPopup: false;
   },
 };

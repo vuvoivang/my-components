@@ -1,6 +1,6 @@
 import { Text } from '../Text';
 
-export type EventKeys = 'pageNavigate' | 'absoluteUrlNavigate' | 'href' | 'clickType';
+type EventKeys = 'pageNavigate' | 'absoluteUrlNavigate' | 'href' | 'clickType';
 
 export type AnchorProps = Partial<{
   fontSize: string;
