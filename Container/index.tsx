@@ -24,6 +24,8 @@ export const Container = (props: Partial<ContainerProps>) => {
     styledClassNames,
     width,
     height,
+    maxWidth,
+    minHeight,
     className,
   } = props;
   const styledClassNamesValues = (Object.values(styledClassNames) as string[]).flat();
@@ -44,6 +46,8 @@ export const Container = (props: Partial<ContainerProps>) => {
         boxShadow: shadow === 0 ? 'none' : `0px 3px 100px ${shadow}px rgba(0, 0, 0, 0.13)`,
         borderRadius: `${radius}px`,
         flex: fillSpace === 'yes' ? 1 : 'unset',
+        maxWidth,
+        minHeight,
       }}
     >
       {children}

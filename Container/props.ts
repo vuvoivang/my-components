@@ -7,6 +7,8 @@ export type ContainerProps = Partial<{
   fillSpace: string;
   width: string;
   height: string;
+  maxWidth: string;
+  minHeight: string;
   padding: string[];
   margin: string[];
   marginTop: number;
@@ -33,4 +35,6 @@ export const defaultProps: ContainerProps = {
   width: '100%',
   height: 'auto',
   styledClassNames: {},
+  maxWidth: '1280px',
+  minHeight: '0',
 };
