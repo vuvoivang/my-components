@@ -10,6 +10,9 @@ export type ButtonProps = Partial<{
   height: string;
   background: Record<'r' | 'g' | 'b' | 'a', string>;
   color: Record<'r' | 'g' | 'b' | 'a', string>;
+  borderWidth: string;
+  borderStyle: string;
+  borderColor: Record<'r' | 'g' | 'b' | 'a', string>;
   buttonStyle: string;
   padding: any[];
   margin: any[];
@@ -45,4 +48,7 @@ export const defaultProps: ButtonProps = {
     popup: '',
     clickType: '',
   },
+  borderWidth: '0',
+  borderStyle: 'dash',
+  borderColor: { r: '92', g: '90', b: '90', a: '1' },
 };
