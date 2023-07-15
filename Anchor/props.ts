@@ -33,7 +33,7 @@ export const defaultProps: AnchorProps = {
   padding: ['10', '10', '10', '10'],
   margin: ['5', '0', '5', '0'],
   textComponent: {
-    // ...Text.defaultProps,
+    ...Text.defaultProps,
     textAlign: 'center',
   },
   width: '100%',
