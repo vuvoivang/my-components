@@ -40,7 +40,7 @@ export const defaultProps: PopupProps = {
   },
   firstButtonComponent: {
     ...Button.defaultProps,
-    text: 'Close',
+    text: 'Okay',
     color: { r: '255', g: '255', b: '255', a: '1' },
     background: { r: '9', g: '35', b: '163', a: '1' },
     width: '20%',
