@@ -2,7 +2,7 @@ import { PLACEHOLDER_IMAGE_URL } from '../constant';
 
 export type ImageProps = Partial<{
   alt: string;
-  src: string;
+  src: any;
   width: string;
   height: string;
   radius: number;

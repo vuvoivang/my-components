@@ -5,12 +5,12 @@ import cx from 'classnames';
 
 export const Image = (props: ImageProps) => {
   const { width, height, src, alt, className, ...otherProps } = props;
-
-  return (
-    <StyledDiv style={{ width, height }}>
-      <StyledImage className={cx([className, 'image'])} src={src} alt={alt} {...otherProps} />
-    </StyledDiv>
-  );
+  const imgSrc = src.type === "dynamic-data" ? src.value : src;
+return (
+  <StyledDiv style={{ width, height }}>
+    <StyledImage className={cx([className, 'image'])} src={imgSrc} alt={alt} {...otherProps} />
+  </StyledDiv>
+);
 };
 
 Image.defaultProps = defaultProps;
