@@ -13,6 +13,7 @@ export const Anchor = (props: AnchorProps) => {
     styledClassNames,
     fontSize,
     fontWeight,
+    fontFamily,
     textAlign,
     className,
     events,
@@ -40,7 +41,7 @@ export const Anchor = (props: AnchorProps) => {
     <StyledAnchor
       className={cx([
         className,
-        'anchor rounded w-full px-4 py-2 mt-4',
+        'anchor w-full px-4 py-2 mt-4',
         {
           'shadow-lg': props.anchorStyle === 'full',
         },
@@ -54,6 +55,7 @@ export const Anchor = (props: AnchorProps) => {
         {...textComponent}
         text={text}
         color={color}
+        fontFamily={fontFamily}
         fontSize={fontSize}
         fontWeight={fontWeight}
         textAlign={textAlign}
