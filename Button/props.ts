@@ -12,6 +12,9 @@ export type ButtonProps = Partial<{
   height: string;
   background: Record<'r' | 'g' | 'b' | 'a', string>;
   color: Record<'r' | 'g' | 'b' | 'a', string>;
+  borderWidth: string;
+  borderStyle: string;
+  borderColor: Record<'r' | 'g' | 'b' | 'a', string>;
   buttonStyle: string;
   borderWidth: string;
   borderStyle: string;
