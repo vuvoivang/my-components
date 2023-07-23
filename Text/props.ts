@@ -1,5 +1,6 @@
 export type TextProps = Partial<{
   fontSize: string;
+  fontFamily: string;
   textAlign: string;
   fontWeight: string;
   fontStyle: string;

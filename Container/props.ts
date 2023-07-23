@@ -11,13 +11,12 @@ export type ContainerProps = Partial<{
   minHeight: string;
   padding: string[];
   margin: string[];
-  marginTop: number;
-  marginLeft: number;
-  marginBottom: number;
-  marginRight: number;
   shadow: number;
   children: React.ReactNode;
-  radius: number;
+  borderWidth: string;
+  borderStyle: string;
+  borderRadius: number;
+  borderColor: Record<'r' | 'g' | 'b' | 'a', string>;
   styledClassNames?: Record<string, string>;
   className?: string;
 }>;
@@ -31,7 +30,10 @@ export const defaultProps: ContainerProps = {
   background: { r: '255', g: '255', b: '255', a: '1' },
   color: { r: '0', g: '0', b: '0', a: '1' },
   shadow: 0,
-  radius: 0,
+  borderWidth: '0',
+  borderStyle: 'none',
+  borderRadius: 0,
+  borderColor: { r: '217', g: '227', b: '234', a: '1' },
   width: '100%',
   height: 'auto',
   styledClassNames: {},

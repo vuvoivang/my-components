@@ -6,6 +6,7 @@ import { defaultProps } from './props';
 
 export const Text = ({
   fontSize,
+  fontFamily,
   textAlign,
   fontWeight,
   fontStyle,
@@ -31,6 +32,7 @@ export const Text = ({
         textShadow: `0px 0px 2px rgba(0,0,0,${(shadow || 0) / 100})`,
         fontWeight,
         fontStyle,
+        fontFamily,
       }}
     >
       {text?.type === "dynamic-data" ? text?.value : text}
