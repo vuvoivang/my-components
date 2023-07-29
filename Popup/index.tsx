@@ -16,6 +16,7 @@ export const Popup = (props: PopupProps) => {
     firstButtonComponent,
     secondButtonComponent,
     containerActionsComponent,
+    events,
     ...otherProps
   } = props;
   const styledClassNamesValues = (Object.values(styledClassNames) as string[]).flat();
@@ -23,9 +24,13 @@ export const Popup = (props: PopupProps) => {
   const handleClose = () => {
     if (document.getElementById(id)) document.getElementById(id).style.display = 'none';
   };
+  const { showPopup } = events;
 
   return (
-    <StyledModal id={id} className={cx(['modal', styledClassNamesValues])}>
+    <StyledModal id={id} className={cx(['modal', styledClassNamesValues])}
+      style={{
+        display: showPopup ? 'block' : 'none',
+      }}>
       <StyledModalContent className='modal-content'>
         <Text {...titleComponent} />
         <Text {...contentComponent} />
