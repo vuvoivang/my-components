@@ -16,10 +16,7 @@ export type ButtonProps = Partial<{
   borderStyle: string;
   borderColor: Record<'r' | 'g' | 'b' | 'a', string>;
   buttonStyle: string;
-  borderWidth: string;
-  borderStyle: string;
   borderRadius: string;
-  borderColor: Record<'r' | 'g' | 'b' | 'a', string>;
   padding: any[];
   margin: any[];
   textComponent: any;
