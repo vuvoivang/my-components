@@ -41,14 +41,14 @@ export const Anchor = (props: AnchorProps) => {
     <StyledAnchor
       className={cx([
         className,
-        'anchor w-full px-4 py-2 mt-4',
+        'anchor w-full px-4 py-2 mt-4 cursor-pointer',
         {
           'shadow-lg': props.anchorStyle === 'full',
         },
         styledClassNamesValues,
       ])}
       href={isUsedHref ? '#' + href : undefined}
-      onClick={isUsedHref && mapClickEvent[clickType]}
+      onClick={!isUsedHref && mapClickEvent[clickType]}
       {...otherProps}
     >
       <Text
